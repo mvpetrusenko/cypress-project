@@ -9,12 +9,17 @@ class youtubeHomePage {
 
     get searchButton() {
         return cy.get('#search-icon-legacy');
-    }
+    } 
+
+
 
     search(query) {
         this.searchInput.type(query); 
         this.searchButton.click(); 
-    }
+    } 
+
+
+
 } 
 
 export default youtubeHomePage;
