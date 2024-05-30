@@ -5,13 +5,33 @@ class youtubeVideoPage {
 
     
     get likeButton() {
-        return cy.get('ytd-toggle-button-renderer[is-icon-button] tp-yt-paper-button#button');
-    } 
 
-    clickLikeButton() {
-        this.likeButton.eq(1).click(); // click the second video
+        return cy.get('.YtLikeButtonViewModelHost').first();
+
     }
 
+    clickLikeButton() { 
+   
+        this.likeButton.click();
+    }  
+
+
+
+    get disLikeButton() {
+        
+        return cy.get('.YtDislikeButtonViewModelHost').first();
+
+    }
+
+    clickDislikeButton() { 
+   
+        this.disLikeButton.click();
+    }  
+
+    
+    
+
+    
     
 
 
