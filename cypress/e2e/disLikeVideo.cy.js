@@ -3,7 +3,7 @@ import  youtubeSearchResultsPage from '../support/pageObjects/youtubeSearchResul
 import  youtubeVideoPage from '../support/pageObjects/youtubeVideoPage'; 
   
 
-  describe.only('Click Like Button Tests', () => { 
+  describe.only('Dislike Video Tests', () => { 
 
     const homePage = new youtubeHomePage(); 
     const resultsPage = new youtubeSearchResultsPage(); 
@@ -18,9 +18,9 @@ import  youtubeVideoPage from '../support/pageObjects/youtubeVideoPage';
 
   
   
-    it('should click the like button', () => {
+    it('should click the dislike button', () => {
   
-        const searchProduct = 'music'; 
+        const searchProduct = 'nature'; 
   
 
         cy.wait(5000);
@@ -28,22 +28,21 @@ import  youtubeVideoPage from '../support/pageObjects/youtubeVideoPage';
   
         homePage.search(searchProduct); 
   
-        cy.url({timeout: 10000}).should('include', 'search_query=music'); 
+        cy.url({timeout: 10000}).should('include', 'search_query=nature'); 
 
 
-        cy.wait(5000);
+        cy.wait(10000);
 
         resultsPage.playVideo(); 
 
         cy.url({timeout: 10000}).should('include', 'watch?'); 
         
-        cy.wait(10000);
+        cy.wait(5000);
   
-        videoPage.clickLikeButton(); 
+        videoPage.clickDislikeButton(); 
 
-        //videoPage.clickLikeButton.should('have.attr', 'aria-pressed', 'true');
-
-      
+        cy.get('yt-formatted-string[id="content"]').should('be.visible');
+        
 
     }); 
 

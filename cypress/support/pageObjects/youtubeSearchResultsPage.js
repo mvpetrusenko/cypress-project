@@ -5,7 +5,7 @@ class youtubeSearchResultsPage {
 
     
     get videoTitle() {
-        return cy.get('#video-title');
+        return cy.get('a#video-title');
     } 
 
     playVideo() {
