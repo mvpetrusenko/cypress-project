@@ -1,10 +1,11 @@
 class youtubeHomePage {
-    visit() {
-        cy.visit('https://www.youtube.com');
-    } 
+    // visit() {
+    //     cy.visit('/');
+    // } 
 
     get searchInput() {
-        return cy.get('#search-form'); 
+        return cy.get('#search-form', {timeout: 5000})
+        .should('be.visible')); 
     } 
 
     get searchButton() {

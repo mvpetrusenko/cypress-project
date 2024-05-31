@@ -22,4 +22,22 @@
 //
 //
 // -- This will overwrite an existing command --
-// Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
+// Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... }) 
+ 
+
+
+Cypress.Commands.add("validSearch", () => {
+    const searchProduct = 'song'; 
+
+
+      cy.get('#search-form', {timeout: 5000})
+      .should('be.visible')
+      .type(searchProduct); 
+    
+      cy.get('#search-icon-legacy').click();
+    
+
+      cy.url({timeout: 10000})
+      .should('include', 'search_query=song');
+})
+
