@@ -1,11 +1,8 @@
 class youtubeHomePage {
-    // visit() {
-    //     cy.visit('/');
-    // } 
 
     get searchInput() {
         return cy.get('#search-form', {timeout: 5000})
-        .should('be.visible')); 
+        .should('be.visible'); 
     } 
 
     get searchButton() {
@@ -13,13 +10,10 @@ class youtubeHomePage {
     } 
 
 
-
     search(query) {
         this.searchInput.type(query); 
         this.searchButton.click(); 
     } 
-
-
 
 } 
 

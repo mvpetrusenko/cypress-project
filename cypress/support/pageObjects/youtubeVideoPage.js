@@ -1,8 +1,4 @@
 class youtubeVideoPage {
-    // visit() {
-    //     cy.visit('https://www.youtube.com');
-    // } 
-
     
     get likeButton() {
 
@@ -15,8 +11,6 @@ class youtubeVideoPage {
         this.likeButton.click();
     }  
 
-
-
     get disLikeButton() {
         
         return cy.get('.YtDislikeButtonViewModelHost')
@@ -28,13 +22,6 @@ class youtubeVideoPage {
    
         this.disLikeButton.click();
     }  
-
-    
-    
-
-    
-    
-
 
 } 
 

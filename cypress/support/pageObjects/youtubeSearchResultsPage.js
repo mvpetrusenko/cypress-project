@@ -1,12 +1,8 @@
 class youtubeSearchResultsPage {
-    // visit() {
-    //     cy.visit('https://www.youtube.com');
-    // } 
-
     
     get videoTitle() {
         return cy.get('a#video-title', {timeout: 5000})
-        .should('be.visible'));
+        .should('be.visible');
     } 
 
     playVideo() {
@@ -14,8 +10,6 @@ class youtubeSearchResultsPage {
     }
 
     
-
-
 } 
 
 export default youtubeSearchResultsPage;
