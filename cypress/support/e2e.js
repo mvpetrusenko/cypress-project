@@ -20,7 +20,7 @@ import './commands'
 // require('./commands') 
 
 // supportFile
-
+import 'cypress-mochawesome-reporter/register';
 
 beforeEach( () => {
     cy.visit('/');
