@@ -20,8 +20,7 @@ import  youtubeVideoPage from '../../support/pageObjects/youtubeVideoPage';
 
         cy.url({timeout: 10000})
         .should('include', 'watch?'); 
-        
-        cy.wait(5000);
+
   
         videoPage.clickLikeButton(); 
 
